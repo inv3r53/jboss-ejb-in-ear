@@ -24,7 +24,7 @@ public class JmsClientTestIT {
         System.out.println(resolveAsFilesForEar()[0]);
     }
 
-    @Deployment(managed = false, name = "jms-client", testable = false)
+    @Deployment(managed = true, name = "jms-client", testable = false)
     public static EnterpriseArchive createTestDeployment() {
         return ShrinkWrap.createFromZipFile(EnterpriseArchive.class, resolveAsFilesForEar()[0]);
     }
