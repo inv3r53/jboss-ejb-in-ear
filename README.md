@@ -1,4 +1,6 @@
-# jboss-ejb-in-ear
+
+To reproduce : https://bugzilla.redhat.com/show_bug.cgi?id=1388911
+
 1)Run "mvn clean install" to build the project.
 
 2)Go to test module and run "mvn install -Pserver"  to launch jmsserver.
