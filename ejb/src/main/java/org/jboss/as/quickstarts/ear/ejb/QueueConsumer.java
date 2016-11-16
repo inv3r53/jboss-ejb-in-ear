@@ -27,6 +27,7 @@ public class QueueConsumer {
             final InitialContext context = new InitialContext();
             final ConnectionFactory connFactory = (ConnectionFactory) context.lookup(CONNECTION_FACTORY);
             connection = connFactory.createConnection();
+            connection.setExceptionListener(new MyExceptionListener(connection));
             session = connection.createSession(false, Session.AUTO_ACKNOWLEDGE);
             final String channelJNDIName = "java:/queue/TestQueue";
             final Queue queue = (Queue) context.lookup(channelJNDIName);
